@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+      type="image/ico"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script
+      defer
+      src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+    <title>Raindrop</title>
+  </head>
+  <body>
+    <div class="play">
+      <div class="ctr">
+        <div id="starter" onclick="controlAudio();">
+          <h1 id="words">Raindrop</h1>
+        </div>
+        <div id="soundcontrol">
+          <input
+            type="range"
+            id="volume"
+            oninput="setAudio(this.value)"
+            onchange="setAudio(this.value)"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+        </div>
+      </div>
+    </div>
+    <audio id="player" loop>
+      <source src="/static/audio/0.mp4" type="audio/mpeg" />
+    </audio>
+  </body>
+</html>
