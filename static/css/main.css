@@ -45,7 +45,23 @@ body {
   /* font-size: 2rem; */
   font-size: 3rem;
   /* text-shadow: 2px silver; */
+  transition: font-size 0.5s ease, color 1s ease-in-out;
 }
+
+#words.words-active {
+  transition: font-size 0.5s ease, color 0.5s ease;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#words:active {
+  font-size: 2rem;
+}
+
+/* #words.words-down {
+  color: red;
+  font-size: 1rem;
+} */
 
 /* #soundcontrol {
   border: 2px solid orange;
@@ -147,5 +163,11 @@ input[type="range"]:focus::-ms-fill-upper {
 @media (max-width: 750px) {
   #words {
     font-size: 2em;
+  }
+  #words.words-active {
+    font-size: 1.5rem;
+  }
+  #words:active {
+    font-size: 1.25rem;
   }
 }
